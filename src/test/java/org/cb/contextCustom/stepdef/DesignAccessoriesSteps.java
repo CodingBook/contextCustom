@@ -18,12 +18,10 @@ public class DesignAccessoriesSteps extends Base{
 
     @Then("Login an account")
     public void loginAnAccount() {
-        waitSomeTime(1000L);
+        waitSomeTime(5L);
         designAccessories.myAccount.click();
-
         designAccessories.username.sendKeys("fakirsule001@gmail.com");
         designAccessories.password.sendKeys("1qaz2wsx");
-        waitSomeTime(5L);
         designAccessories.signIn.click();
         waitSomeTime(1000L);
     }
