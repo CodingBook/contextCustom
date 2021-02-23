@@ -37,7 +37,7 @@ public class HomeAndLivingPage {
     @FindBy(linkText = "Ceramic Mug | Context")
     public WebElement ceramicMugText;
 
-    @FindBy(xpath = "//span[text()='$7.49']")
+    @FindBy(xpath = "//span[text()='$6.49']")
     public WebElement ceramicMugPrice;
 
 }
