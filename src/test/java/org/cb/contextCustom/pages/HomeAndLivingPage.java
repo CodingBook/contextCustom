@@ -14,8 +14,7 @@ public class HomeAndLivingPage {
     }
 
     @FindBy(tagName = "a")
-    public List<WebElement> allLinks;
-
+    public List<WebElement> allLinks ;
 
     @FindBy(xpath = "(//a[@data-toggle='dropdown'])[1]")
     public WebElement categories;
