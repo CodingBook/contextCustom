@@ -23,3 +23,4 @@ public class HomeAndLivingPage {
     @FindBy(xpath = "//li[@class='breadcrumb-item text-nowrap active']")
     public WebElement textOfHomeAndLiving;
 }
+//jshfhb
