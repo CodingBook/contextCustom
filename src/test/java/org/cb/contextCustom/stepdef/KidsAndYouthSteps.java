@@ -41,29 +41,4 @@ public class KidsAndYouthSteps extends Base{
         waitSomeTime(1000L);
         textIsDisplayedAndEnabled(expected, kidsAndYouth.KidsYouthClothingText);
     }
-
-    @And("verify that first kids item image is present")
-    public void verifyThatFirstKidsItemImageIsPresent() {
-
-    }
-
-    @And("verify that kids item brand name is present")
-    public void verifyThatKidsItemBrandNameIsPresent() {
-    }
-
-    @Then("verify that kids item title is present")
-    public void verifyThatKidsItemTitleIsPresent() {
-    }
-
-    @And("verify that kids item price is present")
-    public void verifyThatKidsItemPriceIsPresent() {
-    }
-
-    @And("click on first kids item picture")
-    public void clickOnFirstKidsItemPicture() {
-    }
-
-    @Then("verify that first kids item name is present")
-    public void verifyThatFirstKidsItemNameIsPresent() {
-    }
 }

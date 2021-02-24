@@ -4,6 +4,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
+
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/features/",
@@ -11,12 +12,13 @@ import org.junit.runner.RunWith;
         glue = "org/cb/contextCustom/stepdef",
         dryRun =false,
         strict = false,
-        tags = "@Home&Living",
+        tags = "@Kids",
         plugin = {"pretty",
                 "html:target/default-cucumber-reports",
                 "json:target/cucumber.json"
         }
 )
 public class Runner {
-
 }
+
+

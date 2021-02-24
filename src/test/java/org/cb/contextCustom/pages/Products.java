@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class MainPage1 {
+public class Products {
 
-    public MainPage1() {
+    public Products() {
         PageFactory.initElements(MyDriver.get(), this);
     }
 
@@ -15,7 +15,7 @@ public class MainPage1 {
     public WebElement moreProductsButton;
 
     @FindBy(xpath = "//img[@alt='accessories']")
-    public WebElement accessoriesPicture;
+    public WebElement accessoriesImage;
 
     @FindBy(xpath = "//h2[@class='h5']//a[contains(text(), 'Accessories')]")
     public WebElement accessories;
@@ -24,7 +24,7 @@ public class MainPage1 {
     public WebElement backpacks;
 
     @FindBy(css = "img[alt='hats']")
-    public WebElement hatPicture;
+    public WebElement hatImage;
 
     @FindBy(xpath = "//h2[@class='h5']//a[contains(text(),'Hats')]")
     public WebElement hats;
@@ -33,7 +33,7 @@ public class MainPage1 {
     public WebElement beanies;
 
     @FindBy (xpath = "//img[@alt='home-living']")
-    public WebElement homeLivingPicture;
+    public WebElement homeLivingImage;
 
     @FindBy (xpath = "//h2[@class='h5']//a[contains(text(),'Home & Living')]" )
     public WebElement homeLiving;
@@ -41,8 +41,8 @@ public class MainPage1 {
     @FindBy (xpath = "//a[@class='nav-link-style'][normalize-space()='Blankets']" )
     public WebElement blankets;
 
-    @FindBy (xpath = "//img[@alt='kids-youth-clothing']]")
-    public WebElement kidsYouthPicture;
+    @FindBy (xpath = "//img[@alt='kids-youth-clothing']")   // buradaki attribute gore yani alt'in karsiligi olan kids-youth-clothing'i feature file da vermek lazim ki buna gore kiyas yapacaz
+    public WebElement kidsYouthImage;
 
     @FindBy (xpath = "//h2[@class='h5']//a[contains(text(),'Kids & Youth Clothing')]")
     public WebElement kidsYouthClothing;
@@ -51,24 +51,31 @@ public class MainPage1 {
     public WebElement babybibs;
 
     @FindBy (xpath = "//img[@alt='mens-clothing']")
-    public WebElement mensClothingPicture;
+    public WebElement mensClothingImage;
 
     @FindBy (xpath = "//div[5]//div[1]//div[1]//h2[1]//a[1]")
     public WebElement mensClothing;
 
-    @FindBy (xpath = "//div[5]//div[1]//div[1]//ul[1]//li[1]//a[1]")
-    public WebElement Bottoms;
+    //(//h2[@class='h5'][contains(text(),'Men's Clothing')])[5]
+    //(//h2[@class='h5']//a[contains(text(),'Women's Clothing')])[3]
+
+    @FindBy (xpath = "(//a[@class='nav-link-style'][contains(text(),'Bottoms')])[1]")
+    public WebElement bottomsM;
 
     @FindBy (xpath = "//img[@alt='womens-clothing']")
-    public WebElement womensClothingPicture;
+    public WebElement womensClothingImage;
 
     @FindBy (xpath = "//div[6]//div[1]//div[1]//h2[1]//a[1]")
     public WebElement womensClothing;
 
-    @FindBy (xpath = "//a[@class='nav-link-style'][normalize-space()='Crop Tops']")
-    public WebElement cropTops;
+    @FindBy (xpath= "//li[@class='breadcrumb-item text-nowrap active']")
+    public WebElement verifyWomensClothingText;
 
-
+    @FindBy (xpath = "(//a[@class='nav-link-style'][contains(text(),'Bottoms')])[2]")
+    public WebElement bottomsW;
+//
+//    @FindBy (xpath = "//li[@class='breadcrumb-item text-nowrap active']")
+//    public WebElement verifyBackpacks;
 
 
 

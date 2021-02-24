@@ -1,6 +1,5 @@
 Questions :
-1- What is Design Pattern - Singleton Pattern?
-2- .class lara class ismini neden yaziyoruz?
-3- target dosyasinda raporlari neden goremiyoruz?
-4- if-else yapisinda test else e girdigimizde.
-5- 
+1-
+2-
+3-
+4-

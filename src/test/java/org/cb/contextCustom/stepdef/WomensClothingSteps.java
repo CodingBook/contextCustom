@@ -33,28 +33,4 @@ public class WomensClothingSteps extends Base{
         waitSomeTime(1000L);
         textIsDisplayedAndEnabled(expected, womensClothing.womensClothingText);
     }
-
-    @And("verify that first women item image is present")
-    public void verifyThatFirstWomenItemImageIsPresent() {
-    }
-
-    @And("verify that women item brand name is present")
-    public void verifyThatWomenItemBrandNameIsPresent() {
-    }
-
-    @Then("verify that women item title is present")
-    public void verifyThatWomenItemTitleIsPresent() {
-    }
-
-    @And("verify that women item price is present")
-    public void verifyThatWomenItemPriceIsPresent() {
-    }
-
-    @And("click on first women item picture")
-    public void clickOnFirstWomenItemPicture() {
-    }
-
-    @Then("verify that first women item name is present")
-    public void verifyThatFirstWomenItemNameIsPresent() {
-    }
 }

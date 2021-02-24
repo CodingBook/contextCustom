@@ -52,7 +52,7 @@ public class Hooks {
         }
         logger.info("###### END OF TESTS #####");
 
-//        MyDriver.get().close();
+        MyDriver.get().close();
     }
 }
 
