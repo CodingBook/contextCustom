@@ -3,10 +3,6 @@ package org.cb.contextCustom.stepdef;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.cb.contextCustom.pages.DesignAccessories;
-import org.cb.contextCustom.pages.MainPage;
-import org.cb.contextCustom.utils.MyDriver;
-import org.junit.Assert;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.Select;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,8 +14,9 @@ public class DesignAccessoriesSteps extends Base{
 
     @Then("Login an account")
     public void loginAnAccount() {
-        waitSomeTime(5L);
+        waitSomeTime(1000L);
         designAccessories.myAccount.click();
+
         designAccessories.username.sendKeys("fakirsule001@gmail.com");
         designAccessories.password.sendKeys("1qaz2wsx");
         designAccessories.signIn.click();
