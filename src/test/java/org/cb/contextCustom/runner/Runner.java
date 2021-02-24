@@ -6,19 +6,17 @@ import org.junit.runner.RunWith;
 
 
 @RunWith(Cucumber.class)
-@CucumberOptions(
-        features = "src/test/resources/features/",
+@CucumberOptions(glue ={"org.cb.contextCustom.stepdef"},
         // Glue path must start after java folder. (after this -> src/test/java)
-        glue = "org/cb/contextCustom/stepdef",
-        dryRun =false,
-        strict = false,
-        tags = "@Kids",
+        features = "src/test/resources/features/",
+//        dryRun = false,
+//        strict = false,
+//        tags = "@Home&Living",
         plugin = {"pretty",
                 "html:target/default-cucumber-reports",
-                "json:target/cucumber.json"
-        }
-)
+                "json:target/cucumber.json"})
 public class Runner {
+
 }
 
 
