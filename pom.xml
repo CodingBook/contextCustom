@@ -113,7 +113,7 @@
               <goal>generate</goal>
             </goals>
             <configuration>
-              <projectName>contextcustom.com Smoke Test</projectName>
+              <projectName>contextcustom.com</projectName>
               <outputDirectory>${project.build.directory}/myReports</outputDirectory>
               <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
             </configuration>
