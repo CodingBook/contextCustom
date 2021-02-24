@@ -20,7 +20,7 @@ public class BrandLogo {
     @FindBy(linkText = "Print Now")
     public  WebElement printNowButton;
 
-    @FindBy(xpath = "(//img[@alt='Shop Converse'])[3]")
+    @FindBy(xpath = "(//img[@alt='Shop Converse'])[2]")
     public WebElement printImage;
 
     @FindBy (xpath = "//h2[contains(text(),'Brands')]")
