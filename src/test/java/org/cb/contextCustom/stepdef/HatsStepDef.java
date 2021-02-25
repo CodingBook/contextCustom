@@ -8,17 +8,11 @@ public class HatsStepDef extends Base {
 
     HatsPage hatsPage=new HatsPage();
 
-    @Then("move to Hats")
-    public void move_to_Hats() {
+    @Then("move to Hats and click on All Hats")
+    public void moveToHatsAndClickOnAllHats() {
         moveToElement(hatsPage.hats);
+        moveAndClickToElement(hatsPage.allHats);
     }
-
-
-    @Then("click on All Hats")
-    public void click_on_All_Hats() {
-       moveAndClickToElement(hatsPage.allHats);
-    }
-
 
     @Then("verify Hats page is displayed")
     public void verify_Hats_page_is_displayed() {
@@ -26,25 +20,14 @@ public class HatsStepDef extends Base {
         String actual = hatsPage.textOfHats.getText();
         verifyTheText(actual, expected);
     }
-    @Then("verify Cuffed Beanie image is present")
-    public void verifyCuffedBeanieImageIsPresent() {
+
+    @Then("verify Cuffed Beanie image,brand,text,price is present")
+    public void verifyCuffedBeanieImageBrandTextPriceIsPresent() {
         hatsPage.cuffedBeanieImage.isDisplayed();
-    }
-
-    @And("verify  Cuffed Beanie item brand name is present")
-    public void verifyCuffedBeanieItemBrandNameIsPresent() {
         hatsPage.cuffedBeanieBrand.isDisplayed();
-    }
-
-    @Then("verify Cuffed Beanie item text is present")
-    public void verifyCuffedBeanieItemTextIsPresent() {
         String expected="Cuffed Beanie | Context B110";
         String actual=hatsPage.cuffedBeanieText.getText();
         verifyTheText(actual,expected);
-    }
-
-    @And("verify Cuffed Beanie item price is present")
-    public void verifyCuffedBeanieItemPriceIsPresent() {
         hatsPage.cuffedBeaniePrice.isDisplayed();
     }
 
