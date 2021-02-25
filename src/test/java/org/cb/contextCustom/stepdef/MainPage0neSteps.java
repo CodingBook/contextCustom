@@ -2,6 +2,7 @@ package org.cb.contextCustom.stepdef;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.cb.contextCustom.pages.MainPageOne;
 import org.cb.contextCustom.utils.ConfigurationReader;
@@ -44,4 +45,5 @@ public class MainPage0neSteps extends Base {
         else logger.warn("Error");
 
     }
+
 }
