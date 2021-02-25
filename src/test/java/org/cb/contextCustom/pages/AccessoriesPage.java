@@ -27,6 +27,17 @@ public class AccessoriesPage {
     @FindBy(xpath = "//li[@class='breadcrumb-item text-nowrap active']")
     public WebElement textOfAccessories;
 
+    @FindBy(xpath = "(//a[@class='card-img-top d-block overflow-hidden'])[1]")
+    // @FindBy(xpath = "//img[@src='/media/images/EcoToteBack.png']")
+    public WebElement toteBagImage;
 
+    @FindBy(xpath = "(//a[text()='Context'])[1]")
+    public WebElement toteBagBrand;
+
+    @FindBy(linkText = "//a[text()='Organic Tote Bag']")
+    public WebElement organicToteBagText;
+
+    @FindBy(xpath = "//span[@class='text-accent'][1]")
+    public WebElement toteBagPrice;
 
 }
