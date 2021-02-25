@@ -1,5 +1,7 @@
 Questions :
-1-
-2-
-3-
-4-
+1- Singleton Pattern
+2- Parallel testing
+3- Why we use <classname>.class while calling Logger class.
+4- How to make push, pull merge and rebase in GitHub?
+5- How to release if we have a bug/s in our test?
+6-
