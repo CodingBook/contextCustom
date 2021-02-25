@@ -4,10 +4,11 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
+
 @RunWith(Cucumber.class)
 @CucumberOptions(glue ={"org.cb.contextCustom.stepdef"},
-        features = "src/test/resources/features/",
         // Glue path must start after java folder. (after this -> src/test/java)
+        features = "src/test/resources/features/",
 //        dryRun = false,
 //        strict = false,
 //        tags = "@Home&Living",
@@ -17,3 +18,5 @@ import org.junit.runner.RunWith;
 public class Runner {
 
 }
+
+
