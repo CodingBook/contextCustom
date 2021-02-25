@@ -41,4 +41,39 @@ public class KidsAndYouthSteps extends Base{
         waitSomeTime(1000L);
         textIsDisplayedAndEnabled(expected, kidsAndYouth.KidsYouthClothingText);
     }
+
+    @And("verify that first kids item image is present")
+    public void verifyThatFirstKidsItemImageIsPresent() {
+        imageIsDisplayedAndEnabled(kidsAndYouth.firstItemImage);
+    }
+
+    @And("verify that kids item brand name is present")
+    public void verifyThatKidsItemBrandNameIsPresent() {
+        String expected = "Bella canvas";
+        textIsDisplayedAndEnabled(expected, kidsAndYouth.firstItemBrandName);
+    }
+
+    @Then("verify that kids item title is present")
+    public void verifyThatKidsItemTitleIsPresent() {
+        String expected = "Baby Jersey Short Sleeve Tee | 3001B Bella Canvas";
+        textIsDisplayedAndEnabled(expected, kidsAndYouth.firstItemTitle);
+    }
+
+    @And("verify that kids item price is present")
+    public void verifyThatKidsItemPriceIsPresent() {
+        String expected = "$8.76";
+        textIsDisplayedAndEnabled(expected, kidsAndYouth.firstItemPrice);
+    }
+
+    @And("click on first kids item picture")
+    public void clickOnFirstKidsItemPicture() {
+        click(kidsAndYouth.firstItemImage);
+        waitSomeTime(1000L);
+    }
+
+    @Then("verify that first kids item name is present")
+    public void verifyThatFirstKidsItemNameIsPresent() {
+        String expected = "Baby Jersey Short Sleeve …";
+        textIsDisplayedAndEnabled(expected, kidsAndYouth.firstItemName);
+    }
 }
