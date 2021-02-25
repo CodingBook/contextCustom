@@ -7,3 +7,4 @@ Feature:Women's Clothing Page Functionality
     Then move on to Women's Clothing sub-menu
     And move and click on All Women's Clothing
     Then verify that Women's Clothing text is present
+
