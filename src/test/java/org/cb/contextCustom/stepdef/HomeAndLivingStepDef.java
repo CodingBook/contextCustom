@@ -15,14 +15,21 @@ public class HomeAndLivingStepDef extends Base {
         moveToElement(homeAndLivingPage.categories);
     }
 
-    @When("move on to Home & Living")
-    public void move_on_to_Home_Living() {
-       moveToElement(homeAndLivingPage.homeAndLiving);
+    @Then("move on to Home & Living and move on to All Home & Living Page and click")
+    public void moveOnToHomeLivingAndMoveOnToAllHomeLivingPageAndClick() {
+        moveToElement(homeAndLivingPage.homeAndLiving);
+        moveAndClickToElement(homeAndLivingPage.allHomeAndLiving);
     }
 
-    @Then("move on to All Home & Living Page and click")
-    public void move_on_to_All_Home_Living_Page_and_click() {
-       moveAndClickToElement(homeAndLivingPage.allHomeAndLiving);
+    @Then("verify Ceramic Mug image brand,text,price,is present")
+    public void verifyCeramicMugImageBrandTextPriceIsPresent() {
+        homeAndLivingPage.ceramicMugImage.isDisplayed();
+        homeAndLivingPage.ceramicMugBrand.isDisplayed();
+        String expected="Ceramic Mug | Context";
+        String actual=homeAndLivingPage.ceramicMugText.getText();
+        verifyTheText(expected,actual);
+        homeAndLivingPage.ceramicMugPrice.isDisplayed();
+
     }
 
     @Then("verify  Home & Living  text is present")
@@ -43,30 +50,10 @@ public class HomeAndLivingStepDef extends Base {
             }
         }
     }
-    @Then("verify Ceramic Mug image is present")
-    public void verifyCeramicMugImageIsPresent() {
-        homeAndLivingPage.ceramicMugImage.isDisplayed();
-    }
-
-    @And("verify  Ceramic Mug item brand name is present")
-    public void verifyCeramicMugItemBrandNameIsPresent() {
-        homeAndLivingPage.ceramicMugBrand.isDisplayed();
-    }
-
-    @Then("verify Ceramic Mug item text is present")
-    public void verifyCeramicMugItemTextIsPresent() {
-        String expected="Ceramic Mug | Context";
-        String actual=homeAndLivingPage.ceramicMugText.getText();
-        verifyTheText(expected,actual);
-    }
-
-    @And("verify Ceramic Mug item price is present")
-    public void verifyCeramicMugItemPriceIsPresent() {
-        homeAndLivingPage.ceramicMugPrice.isDisplayed();
-    }
 
     @And("click  Ceramic Mug item picture")
     public void clickCeramicMugItemPicture() {
     }
+
 
 }
