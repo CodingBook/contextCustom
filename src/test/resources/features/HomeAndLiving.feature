@@ -9,3 +9,4 @@ Feature:Home & Living Page Functionality
     And print all links from the current page
     And click  Ceramic Mug item picture
 #    Then verify Ceramic Mug item name is present
+  #jsdnvjs
