@@ -24,6 +24,7 @@ public class WomensClothingSteps extends Base{
 
     @And("move and click on All Women's Clothing")
     public void moveAndClickOnAllWomenSClothing() {
+
         moveAndClickToElement(womensClothing.allWomen);
     }
 
