@@ -34,6 +34,7 @@ public class WomensClothingStepsNew extends Base {
     public void userClicksOnFirstWomenProductAndVerifies() {
         imageIsDisplayedAndEnabled(womensClothingNew.firstItemImage);
         String expected = "Unisex CVC SS Tee …";
+        waitSomeTime(1000L);
         textIsDisplayedAndEnabled(expected, womensClothingNew.firstItemName);
     }
 }
