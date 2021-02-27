@@ -1,11 +1,8 @@
 Feature: Verifying the MainPage
 
-## operation to log in everytime for each scenario
-  Background:
-    Given user is in landing page and signs in
-
   @Products
   Scenario Outline: Navigating and Verifying Products
+    Given user is in landing page and signs in
 
     When user verifies that images "<categories images>" are displayed
 #    Then User verifies that "accessories" is displayed
