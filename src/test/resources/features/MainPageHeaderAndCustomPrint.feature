@@ -13,13 +13,13 @@ Feature: MainPage Header and Custom Print Verification
 
     Examples:
       | Header elements | Custom Print elements                 |
-      | How It Works?   | We'll print & ship it for you!        |
-      | Free Mockups    | Custom printed & embroidered products |
-      | Buy Designs     | Make an Order                         |
-      | Search          | Bring Your Own Tee                    |
-      | My Account      | Shop Converse                         |
-      | cartIcon        | Bring Your Own Tee                    |
-      | My Cart         | Shop Converse                         |
+      | How It Works?   | Custom printed & embroidered products |
+      | Free Mockups    | We'll print & ship it for you!        |
+      | Buy Designs     | Bring your Tee                        |
+      | SearchIcon      | Make an Order Image                 |
+      | My Account      | Print Now Image                        |
+      | cartIcon        | Make An Order Button                     |
+      | My Cart         | Print Now Button                        |
 
 
 
