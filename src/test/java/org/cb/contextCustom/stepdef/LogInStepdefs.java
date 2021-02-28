@@ -53,9 +53,12 @@ public class LogInStepdefs extends Base {
         waitSomeTime(1000L);
     }
 
-    @Then("User clicks Sign In button in the signin section")
-    public void userClicksSignInButtonInTheSigninSection() {
+    @Then("User clicks Sign In button in the signin section and login status {string} appears")
+    public void userClicksSignInButtonInTheSigninSectionAndLoginStatusAppears(String arg0) {
         logIn.signInButton.click();
+        waitSomeTime(1000L);
+        Assert.assertEquals(arg0,MyDriver.get().getCurrentUrl());
+        System.out.println(MyDriver.get().getCurrentUrl());
         waitSomeTime(5000L);
     }
 }
