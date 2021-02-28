@@ -84,7 +84,7 @@ public class MainPageHeaderAndCustomPrintSteps extends Base {
         sendKeysValue(email, mensClothingNew.username);
         sendKeysValue(password, mensClothingNew.password);
         click(mensClothingNew.signInButton);
-        waitSomeTime(1000L);
+        waitSomeTime(2000L);
 
         mainPageHeaderAndCustomPrint.printNowButton.click();
         logger.info("Clicks on Print Now Button");
