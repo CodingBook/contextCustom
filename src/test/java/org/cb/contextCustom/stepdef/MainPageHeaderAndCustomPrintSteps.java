@@ -4,6 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.cb.contextCustom.pages.MainPageHeaderAndCustomPrint;
+import org.cb.contextCustom.pages.MensClothingNew;
 import org.cb.contextCustom.utils.ConfigurationReader;
 import org.cb.contextCustom.utils.MyDriver;
 import org.junit.Assert;
@@ -11,7 +12,7 @@ import org.junit.Assert;
 public class MainPageHeaderAndCustomPrintSteps extends Base {
 
     MainPageHeaderAndCustomPrint mainPageHeaderAndCustomPrint = new MainPageHeaderAndCustomPrint();
-
+    MensClothingNew mensClothingNew = new MensClothingNew();
     @Given("User verifies the landing page")
     public void userVerifiesTheLandingPage() {
 
@@ -21,14 +22,16 @@ public class MainPageHeaderAndCustomPrintSteps extends Base {
         logger.info("contextcustom.com website title is {}", actual);
 
         imageIsDisplayedAndEnabled(mainPageHeaderAndCustomPrint.logo);
+
     }
 
     @When("Verifies that {string} are present")
     public void verifiesThatArePresent(String value) {
+
         waitSomeTime(3000L);
 
         if(value.equals(mainPageHeaderAndCustomPrint.howItWorks.getText())){
-            textIsDisplayedAndEnabled("How It Works", mainPageHeaderAndCustomPrint.howItWorks);
+            textIsDisplayedAndEnabled("How It Works?", mainPageHeaderAndCustomPrint.howItWorks);
         }
         else if(value.equals(mainPageHeaderAndCustomPrint.freeMockups.getText())){
             textIsDisplayedAndEnabled("Free Mockups", mainPageHeaderAndCustomPrint.freeMockups);
@@ -62,15 +65,32 @@ public class MainPageHeaderAndCustomPrintSteps extends Base {
 
         imageIsDisplayedAndEnabled(mainPageHeaderAndCustomPrint.printNowImage);
 
-        mainPageHeaderAndCustomPrint.makeAnOrderButton.isEnabled();
+        mainPageHeaderAndCustomPrint.makeAnOrderButton.isDisplayed();
 
-        mainPageHeaderAndCustomPrint.printNowButton.isEnabled();
+        mainPageHeaderAndCustomPrint.printNowButton.isDisplayed();
 
     }
 
     @Then("Clicks on Print Now and verifies the page")
     public void clicksOnPrintNowAndVerifiesThePage() {
+
         mainPageHeaderAndCustomPrint.printNowButton.click();
+
+        click(mensClothingNew.signIn);
+        waitSomeTime(1000L);
+
+        String email = "mehmetvural@chindamanee.ac.th";
+        String password = "Context@2021";
+        sendKeysValue(email, mensClothingNew.username);
+        sendKeysValue(password, mensClothingNew.password);
+        click(mensClothingNew.signInButton);
+        waitSomeTime(2000L);
+
+        mainPageHeaderAndCustomPrint.printNowButton.click();
+        logger.info("Clicks on Print Now Button");
+
+        mainPageHeaderAndCustomPrint.printingSupply.isDisplayed();
+        logger.info("Printing Supply is present");
 
     }
 

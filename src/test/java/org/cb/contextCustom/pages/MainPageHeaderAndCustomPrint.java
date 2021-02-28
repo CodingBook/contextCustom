@@ -57,4 +57,7 @@ public class MainPageHeaderAndCustomPrint {
     @FindBy(xpath = "//div[@class='row my-4']//div[1]//div[1]//img[1]")
     public WebElement printNowImage;
 
+    @FindBy(xpath = "//li[@class='breadcrumb-item text-nowrap active']")
+    public WebElement printingSupply;
+
 }
