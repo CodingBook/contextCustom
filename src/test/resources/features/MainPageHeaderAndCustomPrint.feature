@@ -16,10 +16,10 @@ Feature: MainPage Header and Custom Print Verification
       | How It Works?   | Custom printed & embroidered products |
       | Free Mockups    | We'll print & ship it for you!        |
       | Buy Designs     | Bring your Tee                        |
-      | SearchIcon      | Make an Order Image                 |
-      | My Account      | Print Now Image                        |
-      | cartIcon        | Make An Order Button                     |
-      | My Cart         | Print Now Button                        |
+      | SearchIcon      | Make an Order Image                   |
+      | My Account      | Print Now Image                       |
+      | cartIcon        | Make An Order Button                  |
+      | My Cart         | Print Now Button                      |
 
 
 
