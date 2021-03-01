@@ -1,5 +1,6 @@
 package org.cb.contextCustom.stepdef;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.cb.contextCustom.pages.AccessoriesPage;
@@ -8,26 +9,19 @@ public class AccessoriesStepDef extends Base{
 
     AccessoriesPage accessoriesPage=new AccessoriesPage();
 
-    @When("move on to Categories dropdown menu for Accessories")
-    public void moveOnToCategoriesDropdownMenuForAccessories() {
-        moveToElement(accessoriesPage.categories);
-    }
-
-    @Then("move on to Accessories and move on to All Accessories and click")
-    public void moveOnToAccessoriesAndMoveOnToAllAccessoriesAndClick() {
+    @When("user lands on All Accessories page and verifies")
+    public void userLandsOnAllAccessoriesPageAndVerifies() {
+        moveToElement(accessoriesPage.allProducts);
+        moveToElement(accessoriesPage.accessories);
         moveAndClickToElement(accessoriesPage.allAccessories);
-        moveToElement(accessoriesPage.categories);
-    }
 
-    @Then("verify  Accessories text is present")
-    public void verify_Accessories_text_is_present() {
         String expected = "Accessories";
         String actual = accessoriesPage.textOfAccessories.getText();
         verifyTheText(actual, expected);
     }
 
-    @Then("verify ToteBag image,brand,price is present")
-    public void verifyToteBagImageBrandPriceIsPresent() {
+    @And("user verifies that first Accessories product features are present")
+    public void userVerifiesThatFirstAccessoriesProductFeaturesArePresent() {
         (accessoriesPage.toteBagImage).isDisplayed();
         //brand
         String expected="Context";
@@ -37,24 +31,16 @@ public class AccessoriesStepDef extends Base{
         String expectedP="$19.99";
         String actualP=accessoriesPage.toteBagPrice.getText();
         verifyTheText(actualP,expectedP);
+        //text
+        String expectedB="Organic Tote Bag";
+        String actualB=accessoriesPage.organicToteBagText.getText();
+        verifyTheText(actualB,expectedB);
     }
 
-    @Then("verify ToteBag item text is present")
-    public void verify_ToteBag_item_text_is_present() {
-        String expected="Organic Tote Bag";
-        String actual=accessoriesPage.organicToteBagText.getText();
-        verifyTheText(actual,expected);
-    }
-
-    @Then("click on ToteBag item picture")
-    public void click_on_ToteBag_item_picture() {
+    @Then("user clicks on first Accessories product and verifies")
+    public void userClicksOnFirstAccessoriesProductAndVerifies() {
         click(accessoriesPage.toteBagImage);
+        //nothing behind
     }
-
-    @Then("verify ToteBag item name is present")
-    public void verify_ToteBag_item_name_is_present() {
-
-    }
-
 
 }
