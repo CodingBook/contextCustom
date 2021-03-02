@@ -9,3 +9,8 @@ Feature: Verifying the MainPage
       | Context Custom |
       | Gildan         |
       | Brand          |
+
+
+#    Then User verifies that "Context Custom" logo is present
+#    Then User verifies that "Gildan" logo is present
+#    Then User verifies that "Brand" logo is present

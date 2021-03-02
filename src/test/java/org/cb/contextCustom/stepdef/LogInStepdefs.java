@@ -29,24 +29,36 @@ public class LogInStepdefs extends Base {
         waitSomeTime(1000L);
     }
 
-    @And("User enters correct {string} in the signin section")
-    public void userEntersCorrectInTheSigninSection(String arg0) {
-        sendKeysValue("kutluhang@yahoo.com", logIn.eMail);
-        sendKeysValue("123456", logIn.password);
+    @And("User enters correct email {string} in the signin section")
+    public void userEntersCorrectEmailInTheSigninSection(String arg0) {
+        logIn.eMail.sendKeys(arg0);
         waitSomeTime(1000L);
-
     }
 
-    @Then("User clicks Sign In button in the signin section")
-    public void userClicksSignInButtonInTheSigninSection() {
-        moveAndClickToElement(logIn.signInButton);
-        waitSomeTime(10000L);
+    @And("User enters correct password {string} in the signin section")
+    public void userEntersCorrectPasswordInTheSigninSection(String arg0) {
+        logIn.password.sendKeys(arg0);
+        waitSomeTime(1000L);
     }
 
-    @And("User enters incorrect {string} in the signin section")
-    public void userEntersIncorrectInTheSigninSection(String arg0) {
-        sendKeysValue("utluhang@yahoo.com", logIn.eMail);
-        sendKeysValue("12345", logIn.password);
+    @And("User enters incorrect email {string} in the signin section")
+    public void userEntersIncorrectEmailInTheSigninSection(String arg0) {
+        logIn.eMail.sendKeys(arg0);
         waitSomeTime(1000L);
+    }
+
+    @And("User enters incorrect password {string} in the signin section")
+    public void userEntersIncorrectPasswordInTheSigninSection(String arg0) {
+        logIn.password.sendKeys(arg0);
+        waitSomeTime(1000L);
+    }
+
+    @Then("User clicks Sign In button in the signin section and login status {string} appears")
+    public void userClicksSignInButtonInTheSigninSectionAndLoginStatusAppears(String arg0) {
+        logIn.signInButton.click();
+        waitSomeTime(1000L);
+        Assert.assertEquals(arg0,MyDriver.get().getCurrentUrl());
+        System.out.println(MyDriver.get().getCurrentUrl());
+        waitSomeTime(5000L);
     }
 }

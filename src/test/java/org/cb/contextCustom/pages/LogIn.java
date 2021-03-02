@@ -26,4 +26,7 @@ public class LogIn {
 
     @FindBy(xpath = "//a[@class='nav-link-inline font-size-sm']")
     public WebElement passwordReset;
+
+//    @FindBy(xpath = "//a[@class='navbar-tool-text ml-n1']//small")
+//    public WebElement myAccount;
 }
