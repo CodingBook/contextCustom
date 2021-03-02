@@ -72,7 +72,6 @@ public class Base {
     protected void textIsDisplayedAndEnabled(String expected, WebElement webElement) {
         String actual;
         actual = webElement.getText();
-//        System.out.println(actual);
         if(expected.equalsIgnoreCase(actual)){
             Assert.assertEquals(expected, actual);
             logger.info("{} is displayed.", expected);
@@ -80,9 +79,7 @@ public class Base {
     }
 
     protected void imageIsDisplayedAndEnabled(WebElement webElement) {
-        if (webElement.isDisplayed() && webElement.isEnabled()) {
-            logger.info("This picture is displayed and enabled.");
-        }
+        Assert.assertTrue("Web element is enabled and displayed.", webElement.isDisplayed() && webElement.isEnabled());
     }
     protected void sendKeysValue(String value, WebElement webElement) {
         webElement.clear();

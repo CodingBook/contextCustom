@@ -52,6 +52,8 @@ public class Hooks {
         }
         logger.info("###### END OF TESTS #####");
 
+//        browser.reloadSession()
+
         String browserClose = ConfigurationReader.getProperty("browserClose");
         System.out.println("Browser Close" + browserClose);
         if(browserClose.equals("0")) {MyDriver.get().close();}
