@@ -5,8 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class BrandLogosNew {
-    public BrandLogosNew() {
+public class BrandLogos {
+    public BrandLogos() {
         PageFactory.initElements(MyDriver.get(), this);
     }
 
