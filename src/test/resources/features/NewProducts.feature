@@ -2,7 +2,7 @@ Feature: Verifying New Products
 
   Scenario: New Products Verification
 
-    Given User is in landing page
+    Given User verifies the landing page
     When User verifies that product images are displayed
     And  User verifies that product names are present
     And  User verifies that product prices are present

@@ -11,14 +11,18 @@ public class AccessoriesPage {
         PageFactory.initElements(MyDriver.get(),this);
     }
 
-    @FindBy(xpath = "(//a[@data-toggle='dropdown'])[1]")
-    public WebElement categories;
+
+    @FindBy(xpath = "//a[@class='nav-link dropdown-toggle pl-0']")
+    public WebElement allProducts;
     //@FindBy(css ="(//a[text()='Accessories'])[1]")
     //xpath="//a[@class='dropdown-item dropdown-toggle'][normalize-space()='Accessories']"
     //linkText="Accessories"
    //@FindBy(xpath = "(//a[@class='dropdown-item dropdown-toggle'])[1]")
 
-    @FindBy(linkText = "Accessories")
+
+    @FindBy(xpath = "//a[@class='dropdown-item dropdown-toggle'][text()='Accessories']")
+    //@FindBy(xpath = "(//a[text()='Accessories'])[1]")
+//    @FindBy(linkText = "Accessories")
     public WebElement accessories;
 
     @FindBy(xpath = "//li[@class='nav-item dropdown']//li[1]//ul[1]//li[1]")
@@ -34,7 +38,8 @@ public class AccessoriesPage {
     @FindBy(xpath = "(//a[text()='Context'])[1]")
     public WebElement toteBagBrand;
 
-    @FindBy(linkText = "//a[text()='Organic Tote Bag']")
+    @FindBy(xpath = "/html/body/div[3]/div/section/div[2]/div[1]/div/div[1]/h3/a")
+//    @FindBy(linkText = "//a[text()='Organic Tote Bag']")
     public WebElement organicToteBagText;
 
     @FindBy(xpath = "//span[@class='text-accent'][1]")

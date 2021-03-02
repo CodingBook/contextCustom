@@ -39,5 +39,8 @@ public class HomeAndLivingPage {
 
     @FindBy(xpath = "//span[text()='$6.49']")
     public WebElement ceramicMugPrice;
+
+    @FindBy(xpath = "//h1[text()='Ceramic Mug | Context']")
+    public WebElement mugTextOnDesignPage;
 }
 

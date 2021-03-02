@@ -10,19 +10,22 @@ public class HomeAndLivingStepDef extends Base {
 
     HomeAndLivingPage homeAndLivingPage=new HomeAndLivingPage();
 
-    @When("move on to Categories dropdown menu for Home & Living")
-    public void move_on_to_Categories_dropdown_menu_for_Home_Living() {
-        moveToElement(homeAndLivingPage.categories);
-    }
 
-    @Then("move on to Home & Living and move on to All Home & Living Page and click")
-    public void moveOnToHomeLivingAndMoveOnToAllHomeLivingPageAndClick() {
+    @When("user lands on All Home & Living Page and verifies")
+    public void userLandsOnAllHomeLivingPageAndVerifies() {
+        moveToElement(homeAndLivingPage.categories);
         moveToElement(homeAndLivingPage.homeAndLiving);
         moveAndClickToElement(homeAndLivingPage.allHomeAndLiving);
+
+        String expected = "Home&Living";
+        String actual = homeAndLivingPage.textOfHomeAndLiving.getText();
+        verifyTheText(actual, expected);
+
     }
 
-    @Then("verify Ceramic Mug image brand,text,price,is present")
-    public void verifyCeramicMugImageBrandTextPriceIsPresent() {
+
+    @And("user verifies that first Home & Living product features are present")
+    public void userVerifiesThatFirstHomeLivingProductFeaturesArePresent() {
         homeAndLivingPage.ceramicMugImage.isDisplayed();
         homeAndLivingPage.ceramicMugBrand.isDisplayed();
         String expected="Ceramic Mug | Context";
@@ -32,12 +35,12 @@ public class HomeAndLivingStepDef extends Base {
 
     }
 
-    @Then("verify  Home & Living  text is present")
-    public void verify_Home_Living_text_is_present() {
-        String expected="Home & Living";
-        String actual = homeAndLivingPage.textOfHomeAndLiving.getText();
-        verifyTheText(actual, expected);
+    @Then("user clicks on first Home & Living product and verifies")
+    public void userClicksOnFirstHomeLivingProductAndVerifies() {
+        click(homeAndLivingPage.ceramicMugImage);
+        homeAndLivingPage.mugTextOnDesignPage.isDisplayed();
     }
+
 
     @And("print all links from the current page")
     public void printAllLinksFromTheCurrentPage() {
@@ -51,9 +54,6 @@ public class HomeAndLivingStepDef extends Base {
         }
     }
 
-    @And("click  Ceramic Mug item picture")
-    public void clickCeramicMugItemPicture() {
-    }
 
 
 }
