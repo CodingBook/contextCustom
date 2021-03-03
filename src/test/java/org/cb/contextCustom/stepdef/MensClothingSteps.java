@@ -6,7 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.cb.contextCustom.pages.MensClothingNew;
 
-public class MensClothingStepsNew extends Base{
+public class MensClothingSteps extends Base{
     MensClothingNew mensClothingNew = new MensClothingNew();
 
     @Given("user is in landing page and signs in")

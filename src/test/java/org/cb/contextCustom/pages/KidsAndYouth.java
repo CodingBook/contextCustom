@@ -5,19 +5,34 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class MensClothing {
-    public MensClothing() {
-        PageFactory.initElements(MyDriver.get(), this);
+public class KidsAndYouth {
+    public KidsAndYouth() {
+        PageFactory.initElements(MyDriver.get(),this);
     }
 
-    @FindBy(xpath = "(//a[@data-toggle='dropdown'])[6]")
-    public WebElement menscloth;
+    @FindBy(xpath = "//div[@class='navbar-tool-text ml-n3']")
+    public WebElement signIn;
 
-    @FindBy(linkText = "All Men's Clothing")
-    public WebElement allMen;
+    @FindBy(xpath = "//*[@id='id_username_reg_pg']")
+    public WebElement username;
+
+    @FindBy(xpath = "//input[@id='id_password_reg_pg']")
+    public WebElement password;
+
+    @FindBy(xpath = "//button[normalize-space()='Sign In']")
+    public WebElement signInButton;
+
+    @FindBy(xpath = "(//a[@data-toggle='dropdown'])[1]")
+    public WebElement categories;
+
+    @FindBy(xpath = "(//a[@data-toggle='dropdown'])[5]")
+    public WebElement kidsAndYouth;
+
+    @FindBy(linkText = "All Kids & Youth Clothing")
+    public WebElement allKids;
 
     @FindBy(xpath = "//li[@class='breadcrumb-item text-nowrap active']")
-    public WebElement mensClothingText;
+    public WebElement KidsYouthClothingText;
 
     @FindBy(xpath = "(//img[@alt='Product'])[1]")
     public WebElement firstItemImage;

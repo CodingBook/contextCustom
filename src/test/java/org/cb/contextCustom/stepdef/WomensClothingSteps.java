@@ -5,7 +5,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.cb.contextCustom.pages.WomensClothingNew;
 
-public class WomensClothingStepsNew extends Base {
+public class WomensClothingSteps extends Base {
     WomensClothingNew womensClothingNew = new WomensClothingNew();
 
     @When("user lands on All Women's Clothing page and verifies")
