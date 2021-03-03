@@ -37,8 +37,8 @@ public class DesignAccessoriesStepsNew extends Base{
         designAccessoriesNew.blackSelect.click();
 
         waitSomeTime(1000L);
+        scrollDown(designAccessoriesNew.oswaldFont);
 //        Select select = new Select(designAccessoriesNew.fontFamily);
-//        scrollDown(designAccessoriesNew.oswaldFont);
 //        select.selectByVisibleText("Oswald");
         selectFromDropDownMenu("Oswald", designAccessoriesNew.fontFamily);
     }

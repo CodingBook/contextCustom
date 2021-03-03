@@ -89,7 +89,6 @@ public class Base {
 
     protected void selectFromDropDownMenu(String selectText, WebElement dropdownMenu) {
         Select selectObj = new Select(dropdownMenu);
-//        scrollDown(designAccessoriesNew.oswaldFont);
         selectObj.selectByVisibleText(selectText);
     }
 }
