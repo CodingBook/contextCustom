@@ -32,7 +32,7 @@ public class WomensClothingSteps extends Base {
 
     @Then("user clicks on first women product and verifies")
     public void userClicksOnFirstWomenProductAndVerifies() {
-        imageIsDisplayedAndEnabled(womensClothing.firstItemImage);
+        click(womensClothing.firstItemImage);
         String expected = "Unisex CVC SS Tee …";
         waitSomeTime(1000L);
         textIsDisplayedAndEnabled(expected, womensClothing.firstItemName);
