@@ -6,6 +6,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -86,5 +87,9 @@ public class Base {
         webElement.sendKeys(value);
     }
 
-
+    protected void selectFromDropDownMenu(String selectText, WebElement dropdownMenu) {
+        Select selectObj = new Select(dropdownMenu);
+//        scrollDown(designAccessoriesNew.oswaldFont);
+        selectObj.selectByVisibleText(selectText);
+    }
 }

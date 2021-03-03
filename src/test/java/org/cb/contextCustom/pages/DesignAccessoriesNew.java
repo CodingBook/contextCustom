@@ -75,7 +75,7 @@ public class DesignAccessoriesNew {
     @FindBy(xpath = "//input[@id='addtocartButton']")
     public WebElement addToCartButton;
 
-    @FindBy(xpath = "//h1[normalize-space()='Your cart']")
+    @FindBy(xpath = "//h1[contains(text(),'My cart')]")
     public WebElement cart;
 
 }
