@@ -4,55 +4,55 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.cb.contextCustom.pages.MensClothingNew;
+import org.cb.contextCustom.pages.MensClothing;
 
 public class MensClothingSteps extends Base{
-    MensClothingNew mensClothingNew = new MensClothingNew();
+    MensClothing mensClothing = new MensClothing();
 
     @Given("user is in landing page and signs in")
     public void userIsInLandingPageAndSignsIn() {
         // login the website
-        click(mensClothingNew.signIn);
+        click(mensClothing.signIn);
         waitSomeTime(1000L);
 
         String email = "mehmetvural@chindamanee.ac.th";
         String password = "Context@2021";
-        sendKeysValue(email, mensClothingNew.username);
-        sendKeysValue(password, mensClothingNew.password);
-        click(mensClothingNew.signInButton);
+        sendKeysValue(email, mensClothing.username);
+        sendKeysValue(password, mensClothing.password);
+        click(mensClothing.signInButton);
         waitSomeTime(1000L);
     }
 
     @When("user lands on All Men's Clothing page and verifies")
     public void userLandsOnAllMenSClothingPageAndVerifies() {
         //click menu
-        moveToElement(mensClothingNew.categories);
-        moveToElement(mensClothingNew.menscloth);
+        moveToElement(mensClothing.categories);
+        moveToElement(mensClothing.menscloth);
         waitSomeTime(1000L);
-        moveAndClickToElement(mensClothingNew.allMen);
+        moveAndClickToElement(mensClothing.allMen);
         //verify the page
         String expected = "Men's Clothing";
         waitSomeTime(1000L);
-        textIsDisplayedAndEnabled(expected, mensClothingNew.mensClothingText);
+        textIsDisplayedAndEnabled(expected, mensClothing.mensClothingText);
     }
 
     @And("user verifies that first product's features are present")
     public void userVerifiesThatFirstProductSFeaturesArePresent() {
         //verifies product's features
-        imageIsDisplayedAndEnabled(mensClothingNew.firstItemImage);
+        imageIsDisplayedAndEnabled(mensClothing.firstItemImage);
         String expected = "Bella canvas";
-        textIsDisplayedAndEnabled(expected, mensClothingNew.firstItemBrandName);
+        textIsDisplayedAndEnabled(expected, mensClothing.firstItemBrandName);
         expected = "Unisex CVC SS Tee | 3001 Bella Canvas";
-        textIsDisplayedAndEnabled(expected, mensClothingNew.firstItemTitle);
+        textIsDisplayedAndEnabled(expected, mensClothing.firstItemTitle);
         expected = "$9.99";
-        textIsDisplayedAndEnabled(expected, mensClothingNew.firstItemPrice);
+        textIsDisplayedAndEnabled(expected, mensClothing.firstItemPrice);
     }
 
     @Then("user clicks on first product and verifies")
     public void userClicksOnFirstProductAndVerifies() {
-        click(mensClothingNew.firstItemImage);
+        click(mensClothing.firstItemImage);
         waitSomeTime(1000L);
         String expected = "Unisex CVC SS Tee …";
-        textIsDisplayedAndEnabled(expected, mensClothingNew.firstItemName);
+        textIsDisplayedAndEnabled(expected, mensClothing.firstItemName);
     }
 }

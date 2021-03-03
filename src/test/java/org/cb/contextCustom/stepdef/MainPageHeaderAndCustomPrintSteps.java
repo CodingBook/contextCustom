@@ -4,15 +4,14 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.cb.contextCustom.pages.MainPageHeaderAndCustomPrint;
-import org.cb.contextCustom.pages.MensClothingNew;
-import org.cb.contextCustom.utils.ConfigurationReader;
+import org.cb.contextCustom.pages.MensClothing;
 import org.cb.contextCustom.utils.MyDriver;
 import org.junit.Assert;
 
 public class MainPageHeaderAndCustomPrintSteps extends Base {
 
     MainPageHeaderAndCustomPrint mainPageHeaderAndCustomPrint = new MainPageHeaderAndCustomPrint();
-    MensClothingNew mensClothingNew = new MensClothingNew();
+    MensClothing mensClothing = new MensClothing();
     @Given("User verifies the landing page")
     public void userVerifiesTheLandingPage() {
 
@@ -76,14 +75,14 @@ public class MainPageHeaderAndCustomPrintSteps extends Base {
 
         mainPageHeaderAndCustomPrint.printNowButton.click();
 
-        click(mensClothingNew.signIn);
+        click(mensClothing.signIn);
         waitSomeTime(1000L);
 
         String email = "mehmetvural@chindamanee.ac.th";
         String password = "Context@2021";
-        sendKeysValue(email, mensClothingNew.username);
-        sendKeysValue(password, mensClothingNew.password);
-        click(mensClothingNew.signInButton);
+        sendKeysValue(email, mensClothing.username);
+        sendKeysValue(password, mensClothing.password);
+        click(mensClothing.signInButton);
         waitSomeTime(2000L);
 
         mainPageHeaderAndCustomPrint.printNowButton.click();

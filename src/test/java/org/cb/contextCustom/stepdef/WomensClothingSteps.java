@@ -3,38 +3,38 @@ package org.cb.contextCustom.stepdef;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.cb.contextCustom.pages.WomensClothingNew;
+import org.cb.contextCustom.pages.WomensClothing;
 
 public class WomensClothingSteps extends Base {
-    WomensClothingNew womensClothingNew = new WomensClothingNew();
+    WomensClothing womensClothing = new WomensClothing();
 
     @When("user lands on All Women's Clothing page and verifies")
     public void userLandsOnAllWomenSClothingPageAndVerifies() {
-        moveToElement(womensClothingNew.categories);
-        moveToElement(womensClothingNew.womenscloth);
+        moveToElement(womensClothing.categories);
+        moveToElement(womensClothing.womenscloth);
         waitSomeTime(1000L);
-        moveAndClickToElement(womensClothingNew.allWomen);
+        moveAndClickToElement(womensClothing.allWomen);
         String expected = "Women's Clothing";
         waitSomeTime(1000L);
-        textIsDisplayedAndEnabled(expected, womensClothingNew.womensClothingText);
+        textIsDisplayedAndEnabled(expected, womensClothing.womensClothingText);
     }
 
     @And("user verifies that first women product's features are present")
     public void userVerifiesThatFirstWomenProductSFeaturesArePresent() {
-        imageIsDisplayedAndEnabled(womensClothingNew.firstItemImage);
+        imageIsDisplayedAndEnabled(womensClothing.firstItemImage);
         String expected = "Bella canvas";
-        textIsDisplayedAndEnabled(expected, womensClothingNew.firstItemBrandName);
+        textIsDisplayedAndEnabled(expected, womensClothing.firstItemBrandName);
         expected = "Unisex CVC SS Tee | 3001 Bella Canvas";
-        textIsDisplayedAndEnabled(expected, womensClothingNew.firstItemTitle);
+        textIsDisplayedAndEnabled(expected, womensClothing.firstItemTitle);
         expected = "$9.99";
-        textIsDisplayedAndEnabled(expected, womensClothingNew.firstItemPrice);
+        textIsDisplayedAndEnabled(expected, womensClothing.firstItemPrice);
     }
 
     @Then("user clicks on first women product and verifies")
     public void userClicksOnFirstWomenProductAndVerifies() {
-        imageIsDisplayedAndEnabled(womensClothingNew.firstItemImage);
+        imageIsDisplayedAndEnabled(womensClothing.firstItemImage);
         String expected = "Unisex CVC SS Tee …";
         waitSomeTime(1000L);
-        textIsDisplayedAndEnabled(expected, womensClothingNew.firstItemName);
+        textIsDisplayedAndEnabled(expected, womensClothing.firstItemName);
     }
 }

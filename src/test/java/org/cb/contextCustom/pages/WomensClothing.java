@@ -5,8 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class WomensClothingNew {
-    public WomensClothingNew() {
+public class WomensClothing {
+    public WomensClothing() {
 
         PageFactory.initElements(MyDriver.get(), this);
     }
