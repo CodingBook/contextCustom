@@ -1,63 +1,58 @@
 package org.cb.contextCustom.stepdef;
 
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import org.cb.contextCustom.pages.MensClothing;
+import io.cucumber.java.en.When;
+import org.cb.contextCustom.pages.MensClothingNew;
 
 public class MensClothingSteps extends Base{
-    MensClothing mensClothing = new MensClothing();
+    MensClothingNew mensClothingNew = new MensClothingNew();
 
-    @Then("move on to Men's Clothing sub-menu")
-    public void moveOnToMenSClothingSubMenu() {
-        moveToElement(mensClothing.menscloth);
+    @Given("user is in landing page and signs in")
+    public void userIsInLandingPageAndSignsIn() {
+        // login the website
+        click(mensClothingNew.signIn);
+        waitSomeTime(1000L);
+
+        String email = "mehmetvural@chindamanee.ac.th";
+        String password = "Context@2021";
+        sendKeysValue(email, mensClothingNew.username);
+        sendKeysValue(password, mensClothingNew.password);
+        click(mensClothingNew.signInButton);
         waitSomeTime(1000L);
     }
 
-    @And("move and click on All Men's Clothing")
-    public void moveAndClickOnAllMenSClothing() {
-
-        moveAndClickToElement(mensClothing.allMen);
-    }
-
-    @Then("verify that Men's Clothing text is present")
-    public void verifyThatMenSClothingTextIsPresent() {
+    @When("user lands on All Men's Clothing page and verifies")
+    public void userLandsOnAllMenSClothingPageAndVerifies() {
+        //click menu
+        moveToElement(mensClothingNew.categories);
+        moveToElement(mensClothingNew.menscloth);
+        waitSomeTime(1000L);
+        moveAndClickToElement(mensClothingNew.allMen);
+        //verify the page
         String expected = "Men's Clothing";
         waitSomeTime(1000L);
-        textIsDisplayedAndEnabled(expected, mensClothing.mensClothingText);
+        textIsDisplayedAndEnabled(expected, mensClothingNew.mensClothingText);
     }
 
-    @And("verify that first men item image is present")
-    public void verifyThatFirstMenItemImageIsPresent() {
-        imageIsDisplayedAndEnabled(mensClothing.firstItemImage);
-    }
-
-    @And("verify that men item brand name is present")
-    public void verifyThatMenItemBrandNameIsPresent() {
+    @And("user verifies that first product's features are present")
+    public void userVerifiesThatFirstProductSFeaturesArePresent() {
+        //verifies product's features
+        imageIsDisplayedAndEnabled(mensClothingNew.firstItemImage);
         String expected = "Bella canvas";
-        textIsDisplayedAndEnabled(expected, mensClothing.firstItemBrandName);
+        textIsDisplayedAndEnabled(expected, mensClothingNew.firstItemBrandName);
+        expected = "Unisex CVC SS Tee | 3001 Bella Canvas";
+        textIsDisplayedAndEnabled(expected, mensClothingNew.firstItemTitle);
+        expected = "$9.99";
+        textIsDisplayedAndEnabled(expected, mensClothingNew.firstItemPrice);
     }
 
-    @Then("verify that men item title is present")
-    public void verifyThatMenItemTitleIsPresent() {
-        String expected = "Unisex CVC SS Tee | 3001 Bella Canvas";
-        textIsDisplayedAndEnabled(expected, mensClothing.firstItemTitle);
-    }
-
-    @And("verify that men item price is present")
-    public void verifyThatMenItemPriceIsPresent() {
-        String expected = "$9.99";
-        textIsDisplayedAndEnabled(expected, mensClothing.firstItemPrice);
-    }
-
-    @And("click on men kids item picture")
-    public void clickOnMenKidsItemPicture() {
-        click(mensClothing.firstItemImage);
+    @Then("user clicks on first product and verifies")
+    public void userClicksOnFirstProductAndVerifies() {
+        click(mensClothingNew.firstItemImage);
         waitSomeTime(1000L);
-    }
-
-    @Then("verify that first men item name is present")
-    public void verifyThatFirstMenItemNameIsPresent() {
         String expected = "Unisex CVC SS Tee …";
-        textIsDisplayedAndEnabled(expected, mensClothing.firstItemName);
+        textIsDisplayedAndEnabled(expected, mensClothingNew.firstItemName);
     }
 }

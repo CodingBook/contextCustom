@@ -3,70 +3,40 @@ package org.cb.contextCustom.stepdef;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.cb.contextCustom.pages.WomensClothing;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.cb.contextCustom.pages.WomensClothingNew;
 
-public class WomensClothingSteps extends Base{
-    WomensClothing womensClothing = new WomensClothing();
-    Logger logger = LoggerFactory.getLogger(WomensClothingSteps.class);
+public class WomensClothingSteps extends Base {
+    WomensClothingNew womensClothingNew = new WomensClothingNew();
 
-    @When("move on to Categories dropdown menu")
-    public void moveOnToCategoriesDropdownMenu() {
-        moveToElement(womensClothing.categories);
-    }
-
-    @Then("move on to Women's Clothing sub-menu")
-    public void moveOnToWomenSClothingSubMenu() {
-        moveToElement(womensClothing.womenscloth);
+    @When("user lands on All Women's Clothing page and verifies")
+    public void userLandsOnAllWomenSClothingPageAndVerifies() {
+        moveToElement(womensClothingNew.categories);
+        moveToElement(womensClothingNew.womenscloth);
         waitSomeTime(1000L);
-    }
-
-    @And("move and click on All Women's Clothing")
-    public void moveAndClickOnAllWomenSClothing() {
-
-        moveAndClickToElement(womensClothing.allWomen);
-    }
-
-    @Then("verify that Women's Clothing text is present")
-    public void verifyThatWomenSClothingTextIsPresent() {
+        moveAndClickToElement(womensClothingNew.allWomen);
         String expected = "Women's Clothing";
         waitSomeTime(1000L);
-        textIsDisplayedAndEnabled(expected, womensClothing.womensClothingText);
+        textIsDisplayedAndEnabled(expected, womensClothingNew.womensClothingText);
     }
 
-    @And("verify that first women item image is present")
-    public void verifyThatFirstWomenItemImageIsPresent() {
-        imageIsDisplayedAndEnabled(womensClothing.firstItemImage);
-    }
-
-    @And("verify that women item brand name is present")
-    public void verifyThatWomenItemBrandNameIsPresent() {
+    @And("user verifies that first women product's features are present")
+    public void userVerifiesThatFirstWomenProductSFeaturesArePresent() {
+        imageIsDisplayedAndEnabled(womensClothingNew.firstItemImage);
         String expected = "Bella canvas";
-        textIsDisplayedAndEnabled(expected, womensClothing.firstItemBrandName);
+        textIsDisplayedAndEnabled(expected, womensClothingNew.firstItemBrandName);
+
+        expected = "Unisex CVC SS Tee | 3001 Bella Canvas";
+        textIsDisplayedAndEnabled(expected, womensClothingNew.firstItemTitle);
+
+        expected = "$9.99";
+        textIsDisplayedAndEnabled(expected, womensClothingNew.firstItemPrice);
     }
 
-    @Then("verify that women item title is present")
-    public void verifyThatWomenItemTitleIsPresent() {
-        String expected = "Unisex CVC SS Tee | 3001 Bella Canvas";
-        textIsDisplayedAndEnabled(expected, womensClothing.firstItemTitle);
-    }
-
-    @And("verify that women item price is present")
-    public void verifyThatWomenItemPriceIsPresent() {
-        String expected = "$9.99";
-        textIsDisplayedAndEnabled(expected, womensClothing.firstItemPrice);
-    }
-
-    @And("click on first women item picture")
-    public void clickOnFirstWomenItemPicture() {
-        imageIsDisplayedAndEnabled(womensClothing.firstItemImage);
-
-    }
-
-    @Then("verify that first women item name is present")
-    public void verifyThatFirstWomenItemNameIsPresent() {
+    @Then("user clicks on first women product and verifies")
+    public void userClicksOnFirstWomenProductAndVerifies() {
+        click(womensClothingNew.firstItemImage);
         String expected = "Unisex CVC SS Tee …";
-        textIsDisplayedAndEnabled(expected, womensClothing.firstItemName);
+        waitSomeTime(1000L);
+        textIsDisplayedAndEnabled(expected, womensClothingNew.firstItemName);
     }
 }
