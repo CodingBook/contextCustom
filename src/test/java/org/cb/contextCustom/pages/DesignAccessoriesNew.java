@@ -9,18 +9,6 @@ public class DesignAccessoriesNew {
     public DesignAccessoriesNew(){PageFactory.initElements(MyDriver.get(),this);
     }
 
-    @FindBy(xpath = "//div[@class='navbar-tool-text ml-n3']")
-    public WebElement myAccount;
-
-    @FindBy(xpath = "//input[@id='id_username_reg_pg']")
-    public WebElement username;
-
-    @FindBy(xpath = "//input[@id='id_password_reg_pg']")
-    public WebElement password;
-
-    @FindBy(xpath = "//button[normalize-space()='Sign In']")
-    public WebElement signIn;
-
     @FindBy(xpath = "(//a[@data-toggle='dropdown'])[1]")
     public WebElement categories;
 
@@ -75,7 +63,7 @@ public class DesignAccessoriesNew {
     @FindBy(xpath = "//input[@id='addtocartButton']")
     public WebElement addToCartButton;
 
-    @FindBy(xpath = "//h1[normalize-space()='Your cart']")
+    @FindBy(xpath = "//h1[normalize-space()='My cart']")
     public WebElement cart;
 
 }

@@ -53,7 +53,7 @@ public class DesignAccessoriesStepsNew extends Base{
         designAccessoriesNew.addToCartButton.click();
         waitSomeTime(5L);
 
-        String expected = "Your cart";
+        String expected = "My cart";
         textIsDisplayedAndEnabled(expected,designAccessoriesNew.cart);
 
     }
