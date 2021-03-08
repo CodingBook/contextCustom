@@ -1,15 +1,12 @@
 package org.cb.contextCustom.pages;
-import org.cb.contextCustom.stepdef.Base;
+
 import org.cb.contextCustom.utils.MyDriver;
-import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class KidsAndYouth{
-    public KidsAndYouth(){
+public class KidsAndYouth {
+    public KidsAndYouth() {
         PageFactory.initElements(MyDriver.get(),this);
     }
 
@@ -51,6 +48,4 @@ public class KidsAndYouth{
 
     @FindBy(xpath = "//li[@class='breadcrumb-item text-nowrap active']")
     public WebElement firstItemName;
-
-
 }

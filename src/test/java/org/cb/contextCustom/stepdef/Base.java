@@ -6,6 +6,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -72,7 +73,6 @@ public class Base {
     protected void textIsDisplayedAndEnabled(String expected, WebElement webElement) {
         String actual;
         actual = webElement.getText();
-//        System.out.println(actual);
         if(expected.equalsIgnoreCase(actual)){
             Assert.assertEquals(expected, actual);
             logger.info("{} is displayed.", expected);
@@ -80,14 +80,15 @@ public class Base {
     }
 
     protected void imageIsDisplayedAndEnabled(WebElement webElement) {
-        if (webElement.isDisplayed() && webElement.isEnabled()) {
-            logger.info("This picture is displayed and enabled.");
-        }
+        Assert.assertTrue("Web element is enabled and displayed.", webElement.isDisplayed() && webElement.isEnabled());
     }
     protected void sendKeysValue(String value, WebElement webElement) {
         webElement.clear();
         webElement.sendKeys(value);
     }
 
-
+    protected void selectFromDropDownMenu(String selectText, WebElement dropdownMenu) {
+        Select selectObj = new Select(dropdownMenu);
+        selectObj.selectByVisibleText(selectText);
+    }
 }

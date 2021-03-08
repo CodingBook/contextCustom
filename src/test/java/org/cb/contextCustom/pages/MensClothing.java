@@ -10,6 +10,21 @@ public class MensClothing {
         PageFactory.initElements(MyDriver.get(), this);
     }
 
+    @FindBy(xpath = "//div[@class='navbar-tool-text ml-n3']")
+    public WebElement signIn;
+
+    @FindBy(xpath = "//*[@id='id_username_reg_pg']")
+    public WebElement username;
+
+    @FindBy(xpath = "//input[@id='id_password_reg_pg']")
+    public WebElement password;
+
+    @FindBy(xpath = "//button[normalize-space()='Sign In']")
+    public WebElement signInButton;
+
+    @FindBy(xpath = "(//a[@data-toggle='dropdown'])[1]")
+    public WebElement categories;
+
     @FindBy(xpath = "(//a[@data-toggle='dropdown'])[6]")
     public WebElement menscloth;
 

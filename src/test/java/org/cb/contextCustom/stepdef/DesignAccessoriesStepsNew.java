@@ -19,7 +19,7 @@ public class DesignAccessoriesStepsNew extends Base{
 
     @And("user clicks the first product in the page")
     public void userClicksTheFirstProductInThePage() {
-        waitSomeTime(5L);
+        waitSomeTime(500L);
         moveAndClickToElement(designAccessoriesNew.firstProduct);
     }
 
@@ -36,25 +36,25 @@ public class DesignAccessoriesStepsNew extends Base{
         designAccessoriesNew.shadow.click();
         designAccessoriesNew.blackSelect.click();
 
-        waitSomeTime(5L);
-        Select select = new Select(designAccessoriesNew.fontFamily);
+        waitSomeTime(1000L);
         scrollDown(designAccessoriesNew.oswaldFont);
-        select.selectByVisibleText("Oswald");
+//        Select select = new Select(designAccessoriesNew.fontFamily);
+//        select.selectByVisibleText("Oswald");
+        selectFromDropDownMenu("Oswald", designAccessoriesNew.fontFamily);
     }
 
     @Then("User selects the product quantity and verifies")
     public void userSelectsTheProductQuantityAndVerifies() {
 
-        waitSomeTime(5L);
+        waitSomeTime(1000L);
         Select select = new Select(designAccessoriesNew.howMany);
         scrollDown(designAccessoriesNew.quantity);
         select.selectByVisibleText("10");
-        waitSomeTime(5L);
+        waitSomeTime(1000L);
         designAccessoriesNew.addToCartButton.click();
-        waitSomeTime(5L);
+        waitSomeTime(1000L);
 
         String expected = "My cart";
         textIsDisplayedAndEnabled(expected,designAccessoriesNew.cart);
-
     }
 }

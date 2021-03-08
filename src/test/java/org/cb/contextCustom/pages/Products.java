@@ -11,9 +11,6 @@ public class Products {
         PageFactory.initElements(MyDriver.get(), this);
     }
 
-    @FindBy(xpath = "//a[@class='btn btn-outline-accent']")
-    public WebElement moreProductsButton;
-
     @FindBy(xpath = "//img[@alt='accessories']")
     public WebElement accessoriesImage;
 
@@ -41,7 +38,7 @@ public class Products {
     @FindBy (xpath = "//a[@class='nav-link-style'][normalize-space()='Blankets']" )
     public WebElement blankets;
 
-    @FindBy (xpath = "//img[@alt='kids-youth-clothing']")   // buradaki attribute gore yani alt'in karsiligi olan kids-youth-clothing'i feature file da vermek lazim ki buna gore kiyas yapacaz
+    @FindBy (xpath = "//img[@alt='kids-youth-clothing']")
     public WebElement kidsYouthImage;
 
     @FindBy (xpath = "//h2[@class='h5']//a[contains(text(),'Kids & Youth Clothing')]")
@@ -53,11 +50,8 @@ public class Products {
     @FindBy (xpath = "//img[@alt='mens-clothing']")
     public WebElement mensClothingImage;
 
-    @FindBy (xpath = "//div[5]//div[1]//div[1]//h2[1]//a[1]")
+    @FindBy (xpath = "(//h2[@class='h5'])[5]")
     public WebElement mensClothing;
-
-    //(//h2[@class='h5'][contains(text(),'Men's Clothing')])[5]
-    //(//h2[@class='h5']//a[contains(text(),'Women's Clothing')])[3]
 
     @FindBy (xpath = "(//a[@class='nav-link-style'][contains(text(),'Bottoms')])[1]")
     public WebElement bottomsM;
@@ -65,21 +59,12 @@ public class Products {
     @FindBy (xpath = "//img[@alt='womens-clothing']")
     public WebElement womensClothingImage;
 
-    @FindBy (xpath = "//div[6]//div[1]//div[1]//h2[1]//a[1]")
+    @FindBy (xpath = "(//h2[@class='h5'])[6]")
     public WebElement womensClothing;
-
-    @FindBy (xpath= "//li[@class='breadcrumb-item text-nowrap active']")
-    public WebElement verifyWomensClothingText;
 
     @FindBy (xpath = "(//a[@class='nav-link-style'][contains(text(),'Bottoms')])[2]")
     public WebElement bottomsW;
-//
-//    @FindBy (xpath = "//li[@class='breadcrumb-item text-nowrap active']")
-//    public WebElement verifyBackpacks;
 
-
-
-
-
-
+    @FindBy (xpath = "//li[contains(text(),'Bottoms')]")
+    public WebElement verifyBottomsPageW;
 }

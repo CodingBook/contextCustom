@@ -1,23 +1,16 @@
 package org.cb.contextCustom.stepdef;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.cb.contextCustom.pages.Products;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class ProductsSteps extends Base {
     Products products = new Products();
-    Logger logger = LoggerFactory.getLogger(ProductsSteps.class);
 
-    @When("User navigate and verifies that More products button is present")
-    public void userNavigateAndVerifiesThatMoreProductsButtonIsPresent() {
-        products.moreProductsButton.isDisplayed();
-        logger.info("More products button is displayed");
-    }
 
-    @Then("User verifies that {string} is displayed")
-    public void userVerifiesThatIsDisplayed(String value) {  // image
+    @When("user verifies that images {string} are displayed")
+    public void userVerifiesThatImagesAreDisplayed(String value) {
 
         if (value.equals(products.accessoriesImage.getAttribute("alt"))) {
             imageIsDisplayedAndEnabled(products.accessoriesImage);
@@ -42,8 +35,10 @@ public class ProductsSteps extends Base {
         }
     }
 
-    @Then("User verifies that {string} heading is present")
-    public void userVerifiesThatHeadingIsPresent(String value) {
+
+    @And("user verifies that headings {string} are displayed")
+    public void userVerifiesThatHeadingsAreDisplayed(String value) {
+        waitSomeTime(150L);
 
         if (value.equals(products.accessories.getText())) {
             textIsDisplayedAndEnabled("Accessories", products.accessories);
@@ -62,16 +57,15 @@ public class ProductsSteps extends Base {
 
         } else if (value.equals(products.womensClothing.getText())) {
             textIsDisplayedAndEnabled("Women's Clothing", products.womensClothing);
-            click(products.womensClothing);
-            textIsDisplayedAndEnabled("Women's Clothing", products.verifyWomensClothingText);
+
         } else {
             logger.warn("Failed");
         }
     }
 
-
-    @Then("User verifies that {string} menu is present")
-    public void userVerifiesThatMenuIsPresent(String value) {
+    @And("user verifies that names {string} are present")
+    public void userVerifiesThatNamesArePresent(String value) {
+        waitSomeTime(250L);
 
         if (value.equals(products.backpacks.getText())) {
             textIsDisplayedAndEnabled("Backpacks", products.backpacks);
@@ -90,12 +84,16 @@ public class ProductsSteps extends Base {
 
         } else if (value.equals(products.bottomsW.getText())) {
             textIsDisplayedAndEnabled("Bottoms", products.bottomsW);
-//            click(productsPage.bottomsW);
-          //  textIsDisplayedAndEnabled("Bottoms", productsPage.bottomsW);
 
         } else {
             logger.warn("Failed");
         }
     }
 
+    @Then("user clicks on Bottoms product and verifies")
+    public void userClicksOnBottomsProductAndVerifies() {
+        waitSomeTime(150L);
+        click(products.bottomsW);
+        textIsDisplayedAndEnabled("Bottoms", products.verifyBottomsPageW);
+    }
 }
